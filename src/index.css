@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode */
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+}
+
+* {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Dark mode global token overrides ─────────────────────────────────────── */
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Backgrounds — neutral surfaces */
+html.dark .bg-white                        { background-color: #1a2332 !important; }
+html.dark .bg-slate-50                     { background-color: #0f1724 !important; }
+html.dark .bg-slate-100                    { background-color: #1e293b !important; }
+html.dark .bg-slate-200                    { background-color: #334155 !important; }
+
+/* Hover backgrounds */
+html.dark .hover\:bg-slate-50:hover        { background-color: #1e293b !important; }
+html.dark .hover\:bg-slate-100:hover       { background-color: #334155 !important; }
+html.dark .hover\:bg-slate-200:hover       { background-color: #475569 !important; }
+html.dark .hover\:bg-white:hover           { background-color: #1e293b !important; }
+
+/* Group-hover backgrounds */
+html.dark .group:hover .group-hover\:bg-slate-50 { background-color: #1e293b !important; }
+
+/* Borders */
+html.dark .border-slate-100                { border-color: #1e293b !important; }
+html.dark .border-slate-200                { border-color: #334155 !important; }
+html.dark .border-slate-300                { border-color: #475569 !important; }
+html.dark .border-white                    { border-color: #334155 !important; }
+html.dark .border-white\/10                { border-color: rgba(255,255,255,0.06) !important; }
+html.dark .border-white\/8                 { border-color: rgba(255,255,255,0.05) !important; }
+
+/* Dividers */
+html.dark .divide-slate-50 > * + *         { border-color: #1e293b !important; }
+html.dark .divide-slate-100 > * + *        { border-color: #1e293b !important; }
+html.dark .divide-slate-200 > * + *        { border-color: #334155 !important; }
+
+/* Text */
+html.dark .text-slate-900                  { color: #f1f5f9 !important; }
+html.dark .text-slate-800                  { color: #e2e8f0 !important; }
+html.dark .text-slate-700                  { color: #cbd5e1 !important; }
+html.dark .text-slate-600                  { color: #94a3b8 !important; }
+html.dark .text-slate-500                  { color: #94a3b8 !important; }
+html.dark .text-slate-400                  { color: #64748b !important; }
+
+/* Hover text */
+html.dark .hover\:text-slate-600:hover     { color: #cbd5e1 !important; }
+html.dark .hover\:text-slate-700:hover     { color: #e2e8f0 !important; }
+html.dark .hover\:text-slate-800:hover     { color: #f1f5f9 !important; }
+
+/* Ring / outline */
+html.dark .ring-slate-100                  { --tw-ring-color: #1e293b !important; }
+
+/* Placeholder */
+html.dark input::placeholder,
+html.dark textarea::placeholder            { color: #475569 !important; }
+
+/* Native input bg */
+html.dark input:not([class*="bg-blue"]):not([class*="bg-slate-"]) {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-color: #334155;
+}
+
+/* Scrollbar */
+html.dark ::-webkit-scrollbar              { background-color: #0f1724; }
+html.dark ::-webkit-scrollbar-thumb        { background-color: #334155; border-radius: 4px; }
+
+/* Shadow lift for cards in dark */
+html.dark .shadow-\[0_1px_3px_0_rgba\(0\,0\,0\,0\.04\)\] {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.4) !important;
+}
