@@ -153,11 +153,11 @@ const kpis = [
 
 // ─── Custom Pie label ─────────────────────────────────────────────────────────
 function PieLabel({
-  cx, cy, midAngle, innerRadius, outerRadius, percent, name,
+  cx = 0, cy = 0, midAngle = 0, innerRadius = 0, outerRadius = 0, percent = 0,
 }: {
-  cx: number; cy: number; midAngle: number
-  innerRadius: number; outerRadius: number
-  percent: number; name: string
+  cx?: number; cy?: number; midAngle?: number
+  innerRadius?: number; outerRadius?: number
+  percent?: number
 }) {
   const RADIAN = Math.PI / 180
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5
