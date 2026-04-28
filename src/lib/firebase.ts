@@ -2,14 +2,15 @@ import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCqMPqO9t8GLTQhRbcSbWk_SMrVJCkZUOE',
-  authDomain: 'loginhealthcare-e809b.firebaseapp.com',
-  projectId: 'loginhealthcare-e809b',
-  storageBucket: 'loginhealthcare-e809b.firebasestorage.app',
-  messagingSenderId: '314832062013',
-  appId: '1:314832062013:web:25de395071a8b949ddcc54',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
 
 const app = initializeApp(firebaseConfig)
+
 export const auth = getAuth(app)
 export default app
